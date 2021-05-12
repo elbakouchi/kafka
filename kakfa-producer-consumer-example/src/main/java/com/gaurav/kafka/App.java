@@ -33,12 +33,14 @@ public class App {
 					continue;
 			}
 
-			consumerRecords.forEach(record -> {
-				System.out.println("Record Key " + record.key());
-				System.out.println("Record value " + record.value());
-				System.out.println("Record partition " + record.partition());
-				System.out.println("Record offset " + record.offset());
-			});
+			// consumerRecords.forEach(record -> {
+			// 	System.out.println("Record Key " + record.key());
+			// 	System.out.println("Record value " + record.value());
+			// 	System.out.println("Record partition " + record.partition());
+			// 	System.out.println("Record offset " + record.offset());
+			// });
+		    System.out.println(consumerRecords.iterator().next().key());		
+		
 			consumer.commitAsync();
 		}
 		consumer.close();

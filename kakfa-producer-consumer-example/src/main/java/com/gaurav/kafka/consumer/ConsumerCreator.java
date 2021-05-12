@@ -23,7 +23,7 @@ public class ConsumerCreator {
 		props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, IKafkaConstants.OFFSET_RESET_EARLIER);
 
-		final Consumer<Long, String> consumer = new KafkaConsumer<>(props);
+		final Consumer<Long, String> consumer = new KafkaConsumer<Long, String>(props);
 		consumer.subscribe(Collections.singletonList(IKafkaConstants.TOPIC_NAME));
 		return consumer;
 	}
